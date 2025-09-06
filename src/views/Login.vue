@@ -106,15 +106,15 @@ else{
 
 </script>
 <template>
-      <section class="content">
+      <section class="content ">
       <div class="container-fluid">
         <div class="row">
           <!-- left column -->
-          <div class="col-md-12">
+          <div class=" col-sm-12 col-md-7 ">
             <!-- jquery validation -->
             <div class="card card-primary">
               <div class="card-header">
-                <h3 class="card-title">Quick Example <small>jQuery Validation</small></h3>
+                <h3 class="card-title">Login<small><i class="fas fa-book mx-2"></i></small></h3>
               </div>
               <!-- /.card-header -->
               <!-- form start -->
@@ -129,10 +129,19 @@ else{
                     <input type="password" v-model="formData.password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
                   </div>
                   <div class="form-group mb-0">
-                    <div class="custom-control custom-checkbox">
+                    <div class="custom-control custom-checkbox d-none">
                       <input type="checkbox" name="terms" class="custom-control-input" id="exampleCheck1">
                       <label class="custom-control-label" for="exampleCheck1">I agree to the <a href="#">terms of service</a>.</label>
+                      
                     </div>
+                       <router-link class="form-group " to="/forget-password">Forget Password</router-link>
+                    
+                      <br></br>
+                        <router-link class="form-group" to="/signup">Don't have an account</router-link>
+                  
+               
+                  
+                   
                   </div>
                 </div>
                 <!-- /.card-body -->

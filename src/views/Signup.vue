@@ -6,22 +6,26 @@ import { useDataStore } from '@/stores/counter';
 const userData=useDataStore()
 
 const formData={name:"",email:"", password:''}
-
 //validation and submit handling
 $(function () {
 
   $.validator.setDefaults({
     submitHandler: function () {
         // authorization of User
-    
+  
     const check=userData.users[0].email==formData.email
 if(check){
+  
     router.push('/login')
     alert('email already registed')
 }
 else{
+ userData.users.push(formData)
+
+  console.log(userData.users)
+
     alert("successfully registed please login")
-    router.push('./login')
+    router.push('/login')
 }
 
  
@@ -92,14 +96,14 @@ else{
 
 <template>
       <section class="content">
-      <div class="container-fluid">
+      <div class="container-">
         <div class="row">
           <!-- left column -->
-          <div class="col-md-12">
+          <div class="col-sm-12 col-md-7">
             <!-- jquery validation -->
             <div class="card card-primary">
               <div class="card-header">
-                <h3 class="card-title">Quick Example <small>jQuery Validation</small></h3>
+                <h3 class="card-title">SignUp <small><i class=" fas fa-book mx-2"></i></small></h3>
               </div>
               <!-- /.card-header -->
               <!-- form start -->
@@ -124,6 +128,7 @@ else{
                       <label class="custom-control-label" for="exampleCheck1">I agree to the <a href="#">terms of service</a>.</label>
                     </div>
                   </div>
+                  <router-link to="/login">Already have an account</router-link>
                 </div>
                 <!-- /.card-body -->
                 <div class="card-footer">

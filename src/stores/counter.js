@@ -1,8 +1,10 @@
 import { ref, computed } from 'vue'
 import { defineStore } from 'pinia'
 
+
+
 export const useDataStore = defineStore('counter', () => {
-const users=[
+const users=ref([
   {
     "id": 1,
     "name": "Alice Johnson",
@@ -21,12 +23,12 @@ const users=[
     "signup_date": "2023-06-01",
     "password":"12345"
   }
-]
-const categories=[
+])
+const categories=ref([
   { "id": 1, "name": "Electronics" },
   { "id": 2, "name": "Clothing" },
   { "id": 3, "name": "Home & Kitchen" }
-]
+])
 const products=[
   {
     "id": 101,
